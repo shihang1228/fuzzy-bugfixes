@@ -13,7 +13,13 @@ public class ContactController {
     @RequestMapping("list")
     public String list(Model model) {
         List<Contact> contactList = new ArrayList<Contact>();
-        model.addAttribute("contactList", contactList);
+        Contact contact = new Contact();
+        contact.setName("Shihang");
+        contact.setMobile("15235432994");
+        contact.setVpmn("652994");
+        contact.setHomeAddress("Taiyuan");
+        contactList.add(contact);
+        model.addAttribute("contactList",contactList);
         return "contact/list";
     }
 }
