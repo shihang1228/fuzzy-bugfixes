@@ -11,7 +11,12 @@ import java.util.ArrayList;
 @RequestMapping("contact")
 public class ContactController {
     @RequestMapping("list")
-    public String list(Model model) {
+    public String list(Model model) {    
+        model.addAttribute("contactList",findAll());
+        return "contact/list";
+    }
+    
+    public List<Contact> findAll() {
         List<Contact> contactList = new ArrayList<Contact>();
         Contact contact = new Contact();
         contact.setName("Shihang");
@@ -26,7 +31,6 @@ public class ContactController {
         contact2.setHomeAddress("Xiaodian");
         contactList.add(contact);
         contactList.add(contact2);
-        model.addAttribute("contactList",contactList);
-        return "contact/list";
+        return contactList;
     }
 }
