@@ -18,7 +18,14 @@ public class ContactController {
         contact.setMobile("15235432994");
         contact.setVpmn("652994");
         contact.setHomeAddress("Taiyuan");
+        
+        Contact contact2 = new Contact();
+        contact2.setName("Xiaobai");
+        contact2.setMobile("18235100872");
+        contact2.setVpmn("65872");
+        contact2.setHomeAddress("Xiaodian");
         contactList.add(contact);
+        contactList.add(contact2);
         model.addAttribute("contactList",contactList);
         return "contact/list";
     }
